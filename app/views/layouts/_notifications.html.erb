@@ -1,0 +1,20 @@
+<% if notice %>
+  <div class="notification is-success">
+    <span class="close-notification">&times;</span>
+    <%= notice %>
+  </div>
+<% end %>
+
+<% if alert %>
+  <div class="notification is-danger">
+    <span class="close-notification">&times;</span>
+    <%= alert %>
+  </div>
+<% end %>
+
+<% if flash[:error] %>
+  <div class="notification is-danger">
+    <span class="close-notification">&times;</span>
+    <%= flash[:error] %>
+  </div>
+<% end %>
