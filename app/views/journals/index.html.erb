@@ -1,21 +1,24 @@
-<h1>Your Journal Entries</h1>
-
-<% if @journals.any? %>
-  <div class="row">
-    <% @journals.each do |journal| %>
-    <div class="card" style="width: 100%;">
-      <div class="card-body">
-        <h5 class="card-title"><%= journal.title %></h5>
-        <p class="card-text"><%= journal.body %></p>
-            <div class="mt-2">
-              <%= link_to "Show", journal_path(journal), class: "btn btn-info me-2" %>
-            </div>
+<div class="flex-grow-1 d-flex justify-content-center align-items-center">
+  <div class="text-center">
+    <h2>Your Journal Entries</h2>
+    <% if @journals.any? %>
+      <div class="row">
+        <% @journals.each do |journal| %>
+        <div class="card" style="width: 100%;">
+          <div class="card-body">
+            <h5 class="card-title"><%= journal.title %></h5>
+            <p class="card-text"><%= journal.body %></p>
+                <div class="mt-2">
+                  <%= link_to "Show", journal_path(journal), class: "btn btn-secondary me-2" %>
+                </div>
+          </div>
+        </div>
+        <% end %>
       </div>
-    </div>
+    <% else %>
+      <p>No journal entries yet.</p>
     <% end %>
-  </div>
-<% else %>
-  <p>No journal entries yet.</p>
-<% end %>
 
-<%= link_to 'Create New Entry', new_journal_path, class: "btn btn-info me-2"  %>
+    <%= link_to 'Create New Entry', new_journal_path, class: "btn btn-secondary me-2"  %>
+  </div>
+</div>    
