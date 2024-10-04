@@ -28,7 +28,11 @@
     <div class="navbar-container">
       <%= render 'layouts/navigation' %>
     </div>
-    <%= yield %>
+    <div class="flex-grow-1 d-flex justify-content-center align-items-center">
+      <div class="text-center">
+        <%= yield %>
+      </div>
+    </div> 
   </div>
 </body>
 </html>
