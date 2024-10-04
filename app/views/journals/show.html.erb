@@ -1,17 +1,13 @@
-
-    <h2><%= @journal.title %></h2>
-    <p><%= @journal.body %></p>
-    <small>Created on <%= @journal.created_at.strftime("%B %d, %Y") %></small>
-
-    <div class="mt-4">
-      <%= link_to 'Edit', edit_journal_path(@journal), class: "btn btn-secondary me-2" %>
-      <%= link_to 'Back to Journals', journals_path, class: "btn btn-secondary me-2"  %>
-      <%= link_to "Delete", journal_path(@journal), class: "btn btn-dark", data: { turbo_method: :delete, bs_toggle: "modal", bs_target: "#confirmDeleteModal", id: @journal.id } %>
-    </div>
-  </div>
+<h2><%= @journal.title %></h2>
+<p><%= @journal.body %></p>
+<small>Created on <%= @journal.created_at.strftime("%B %d, %Y") %></small>
+<div class="mt-4">
+  <%= link_to 'Edit', edit_journal_path(@journal), class: "btn btn-secondary me-2" %>
+  <%= link_to 'Back to Journals', journals_path, class: "btn btn-secondary me-2"  %>
+  <%= link_to "Delete", journal_path(@journal), class: "btn btn-dark", data: { turbo_method: :delete, bs_toggle: "modal", bs_target: "#confirmDeleteModal", id: @journal.id } %>
 </div>
-
-
+</div>
+</div>
 <!-- Bootstrap Modal -->
 <div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">

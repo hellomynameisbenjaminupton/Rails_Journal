@@ -1,21 +1,17 @@
-
-    <h2>New Journal Entry</h2>
-    <%= form_with model: @journal, local: true do |form| %>
-      <div class="mb-3">
-        <%= form.label :title, class: "form-label" %>
-        <%= form.text_field :title, class: "form-control" %>
-      </div>
-
-      <div class="mb-3">
-        <%= form.label :body, class: "form-label" %>
-        <%= form.text_area :body, class: "form-control", rows: 5 %>
-      </div>
-
-      <div>
-        <%= form.submit 'Create Journal Entry', class: "btn btn-secondary" %>
-      </div>
-    <% end %>
-
-    <div class="mt-3">
-      <%= link_to 'Back to Journal Entries', journals_path, class: "btn btn-dark" %>
-    </div>
+<h2>New Journal Entry</h2>
+<%= form_with model: @journal, local: true do |form| %>
+  <div class="mb-3">
+    <%= form.label :title, class: "form-label" %>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :body, class: "form-label" %>
+    <%= form.text_area :body, class: "form-control", rows: 5 %>
+  </div>
+  <div>
+    <%= form.submit 'Create Journal Entry', class: "btn btn-secondary" %>
+  </div>
+<% end %>
+<div class="mt-3">
+  <%= link_to 'Back to Journal Entries', journals_path, class: "btn btn-dark" %>
+</div>

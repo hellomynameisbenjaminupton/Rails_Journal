@@ -1,38 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= content_for(:title) || "Journal Application" %></title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
-
-  <%= yield :head %>
-
-  <!-- <link rel="manifest" href="/manifest.json"> -->
-  <link rel="icon" href="/icon.png" type="image/png">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/icon.png">
-  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-  <%= stylesheet_link_tag "custom", "data-turbo-track": "reload" %>
-  <%= javascript_importmap_tags %>
-</head>
-
-<body class="bg-dark min-vh-100 d-flex flex-column">
-
-  <div class="notification-container">
-    <%= render 'layouts/notifications' %>
-  </div>
-
-  <div class="container-fluid container-sm bg-light flex-grow-1 h-100 mt-5 mb-5 d-flex flex-column">
-    <div class="navbar-container">
-      <%= render 'layouts/navigation' %>
+  <head>
+    <title><%= content_for(:title) || "Journal Application" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= yield :head %>
+    <!-- <link rel="manifest" href="/manifest.json"> -->
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "custom", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+  <body class="bg-dark min-vh-100 d-flex flex-column">
+    <div class="notification-container">
+      <%= render 'layouts/notifications' %>
     </div>
-    <div class="flex-grow-1 d-flex justify-content-center align-items-center">
-      <div class="text-center">
-        <%= yield %>
+    <div class="container-fluid container-sm bg-light flex-grow-1 h-100 mt-5 mb-5 d-flex flex-column">
+      <div class="navbar-container">
+        <%= render 'layouts/navigation' %>
       </div>
-    </div> 
-  </div>
-</body>
+      <div class="flex-grow-1 d-flex justify-content-center align-items-center">
+        <div class="text-center">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

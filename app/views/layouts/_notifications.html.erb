@@ -3,19 +3,16 @@
     <%= notice %>
   </div>
 <% end %>
-
 <% if alert %>
   <div class="alert alert-danger alert-dismissible fade show" role="alert" id="alert-alert">
     <%= alert %>
   </div>
 <% end %>
-
 <% if flash[:error] %>
   <div class="alert alert-danger alert-dismissible fade show" role="alert" id="error-alert">
     <%= flash[:error] %>
   </div>
 <% end %>
-
 <script>
   // Auto-hide alerts after 5 seconds
   setTimeout(function() {
