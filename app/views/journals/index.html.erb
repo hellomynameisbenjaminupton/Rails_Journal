@@ -1,9 +1,11 @@
 <h2>Your Journal Entries</h2>
-<% if @journals.last.created_at.to_date == dateToday.to_date %>
+<% if @journals.empty? %>
+  <%= link_to 'Create your first Journal', new_journal_path, class: "btn btn-secondary m-4"  %>
+<% elsif @journals.last.created_at.to_date == dateToday.to_date  %>
   <p>Well done. You've Journaled today. Keep it up.</p>
 <% else %>
   <p>Looks like you havent yet Journaled today. Go ahead and start writing.</p>
-  <%= link_to 'Create New Entry', new_journal_path, class: "btn btn-secondary m-4"  %>
+  <%= link_to 'Create New Journal', new_journal_path, class: "btn btn-secondary m-4"  %>
 <% end %>
 <% if @journals.any? %>
   <div class="row">
