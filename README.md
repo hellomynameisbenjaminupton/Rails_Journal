@@ -1,24 +1,12 @@
-# README
+# Journal App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Install
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+git clone git@github.com:hellomynameisbenjaminupton/Rails_Journal.git
+cd Rails_Journal
+bundle install
+rails db:migrate
+rails assets:precompile
+```

@@ -1,29 +1,40 @@
 <div class="mt-4">
   <h2 class="text-center mb-4">Edit your profile</h2>
 </div>
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
+  <!-- Avatar upload field -->
+  <div class="mb-3">
+    <%= f.label :avatar, class: "form-label" %>
+    <%= f.file_field :avatar, class: "form-control" %>
+  </div>
+  <!-- First name field -->
   <div class="mb-3">
     <%= f.label :first_name, class: "form-label" %>
     <%= f.text_field :first_name, class: "form-control" %>
   </div>
+  <!-- Last name field -->
   <div class="mb-3">
     <%= f.label :last_name, class: "form-label" %>
     <%= f.text_field :last_name, class: "form-control" %>
   </div>
+  <!-- Username field -->
   <div class="mb-3">
     <%= f.label :username, class: "form-label" %>
     <%= f.text_field :username, class: "form-control" %>
   </div>
+  <!-- Email field -->
   <div class="mb-3">
     <%= f.label :email, class: "form-label" %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
   </div>
+  <!-- Confirmation alert (if confirmable) -->
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div class="mb-3 alert alert-warning">
       Currently waiting confirmation for: <%= resource.unconfirmed_email %>
     </div>
   <% end %>
+  <!-- Password field (optional) -->
   <div class="mb-3">
     <%= f.label :password, class: "form-label" %> <i>(leave blank if you don't want to change it)</i>
     <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
@@ -31,17 +42,21 @@
       <small class="form-text text-muted"><%= @minimum_password_length %> characters minimum</small>
     <% end %>
   </div>
+  <!-- Password confirmation -->
   <div class="mb-3">
     <%= f.label :password_confirmation, class: "form-label" %>
     <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
   </div>
+  <!-- Current password for confirmation -->
   <div class="mb-3">
     <%= f.label :current_password, class: "form-label" %> <i>(we need your current password to confirm your changes)</i>
     <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %>
   </div>
+  <!-- Submit button -->
   <div class="d-grid">
     <%= f.submit "Update", class: "btn btn-secondary" %>
   </div>
+  <!-- Back link -->
   <div class="d-grid">
     <%= link_to "Back", :back, class: "custom_link" %>
   </div>
