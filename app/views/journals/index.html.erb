@@ -10,7 +10,7 @@
 <% if @journals.any? %>
   <div class="row">
     <% @journals.each do |journal| %>
-      <div class="card" style="width: 100%;">
+      <div class="card mx-auto">
         <div class="card-body">
           <h5 class="card-title"><%= journal.title %></h5>
           <p class="card-text"><%= journal.body %></p>
